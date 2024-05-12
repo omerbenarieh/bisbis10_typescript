@@ -8,7 +8,6 @@ class ratingController {
       values: [req.body.restaurantId, req.body.rating],
     }
     await db.query(ratingQuery)
-
     // Update averageRating in restaurant table
     const avgRatingQuery = {
       text: `
@@ -21,7 +20,7 @@ class ratingController {
       values: [req.body.restaurantId],
     }
     await db.query(avgRatingQuery)
-    res.status(200).send('Rating created and average rating updated!')
+    res.sendStatus(200)
   }
 }
 

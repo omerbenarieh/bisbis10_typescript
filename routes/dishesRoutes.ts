@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import dishController from '../controllers/dishController'
-const router = Router()
+const router = Router({ mergeParams: true })
 
 router.post('/', dishController.createDish)
 router.put('/:id', dishController.updateDish)
